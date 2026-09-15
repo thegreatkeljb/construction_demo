@@ -2,6 +2,7 @@ import HeroImage from './assets/demo_hero.png'
 import Residential from './assets/demo_residential.png'
 import Commercial from './assets/demo_commercial.png'
 import Industrial from './assets/demo_industrial.png'
+import AboutUsImage from './assets/about_us.png'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <li className={navlink_style}>About</li>
             <li className={navlink_style}>Services</li>
             <li className={navlink_style}>Our Portfolio</li>
+            <li className={navlink_style}>Contact Us</li>
           </ul>
         </div>
       </nav>
@@ -32,15 +34,21 @@ function App() {
           bg-linear-to-b from-gray-100/70 via-transparent to-gray-800/70'>
             <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-end'>
               <div className='text-white'>
-                <span className='text-2xl font-semibold'>WE BUILD TRUST</span>
-                <br />
-                <br />
-                Established in 2015, Demo Builders is owned and managed by reliable and trustworthy professionals with more than 12 years of experience in residential and commercial construction projects.
+                <div  className='text-2xl font-semibold mb-4'>WE BUILD TRUST</div>
+                <div>
+                   Established in 2015, Demo Builders is owned and managed by reliable and trustworthy professionals with more than 12 years of experience in residential and commercial construction projects.
                 <br />
                 Demo Builders stands at the forefront of nation-building in the Philippines, driven by a steadfast commitment to engineering excellence and innovation.
+                </div>
+               <div  className='flex gap-2 mt-4'>
+                <div className='bg-white size-8' />
+                <div className='bg-white/60 size-8' />
+                <div className='bg-white/60 size-8' />
+                <div className='bg-white/60 size-8' />
+               </div>
               </div>
               <div>
-                <div className='text-white text-2xl font-semibold mb-4'>What We Do</div>
+                <div className='text-white text-2xl font-semibold mb-4'>WHAT WE DO</div>
                 <div className='flex h-50'>
                   <div className='w-[40%] flex items-end justify-end border border-gray-400 bg-linear-to-t from-black to-transparent'
                     style={{
@@ -106,12 +114,28 @@ function App() {
 
           </div>
           <img className='h-250 w-full'
-            src={Residential} alt="Single Family Home" />
+            src={Industrial} alt="Single Family Home" />
         </div>
       </section>
+      {/* About */}
+      <section >
+        <div className='h-250 w-full flex items-center justify-center'>
+          <div className='w-280 flex flex-col border border-gray-400'>
+            <div className='grid grid-cols-[1fr_1.5fr] gap-44 pt-12 pl-8 pr-8'>
+            <div className='text-3xl'>For more than 10 years, Demo Builders built  
+              <span className='font-semibold'> spaces that move people forward.</span>
+              </div>
+            <div className='text-lg text-justify'>
+              From homes to commercial spaces, we deliver quality construction built on experience, craftsmanship, and a commitment to doing things right.
+              <br />
+              Guided by our values and passion for excellence, we continue building stronger foundations for a better future.</div>
+          </div>
+          <img className='w-280 scale-105'
+          src={AboutUsImage} alt="" />
+          </div>
+          
 
-      <section className='h-250'>
-
+        </div>
       </section>
     </>
   )
