@@ -4,6 +4,27 @@ import Commercial from '../assets/demo_commercial.png'
 import Industrial from '../assets/demo_industrial.png'
 import AboutUsImage from '../assets/about_us.png'
 
+const HeroCard = ({ image, text, selected = false }) => {
+    return (
+        <>
+         <div className={`${selected ? 'w-[40%]' : 'w-[20%] grayscale opacity-80'} 
+         flex items-end justify-end border border-gray-400 bg-linear-to-t from-black to-transparent`}
+            style={{
+            backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'left',
+            }}>
+            <div className={`flex items-center w-full py-4 ${selected ?  'gap-8' : 'gap-4'}`}>
+            <div className={`w-full h-[0.5px] bg-gray-400 ${selected ?  'pl-8' : 'pl-4'} `} />
+            <span className={`shrink-0 text-white ${selected ?  'pr-8' : 'pr-4'}`}>
+                { text }
+            </span>
+            </div>
+        </div>
+        </>
+    )
+}
+
 const Landing = () => {
   const navlink_style = 'mr-6'
     return (
@@ -49,62 +70,26 @@ const Landing = () => {
                 <div>
                   <div className='text-white text-2xl font-semibold mb-4'>WHAT WE DO</div>
                   <div className='flex h-50'>
-                    <div className='w-[40%] flex items-end justify-end border border-gray-400 bg-linear-to-t from-black to-transparent'
-                      style={{
-                        backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${HeroImage})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'left',
-                      }}>
-                      <div className="flex items-center w-full gap-8 py-4">
-                        <div className="w-full h-[0.5px] bg-gray-400 pl-8" />
-                        <span className="shrink-0 text-white pr-8">
-                          Demo Builders
-                        </span>
-                      </div>
-                    </div>
-                    <div className='w-[20%] grayscale opacity-80 
-                    flex items-end justify-end border border-gray-400'
-                      style={{
-                        backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${Residential})`,
-                        backgroundSize: 'auto 120%',
-                        backgroundPosition: 'center',
-                      }}>
-                      <div className="flex items-center w-full gap-4 py-4">
-                        <div className="w-full h-[0.5px] bg-gray-400 pl-4" />
-                        <span className="shrink-0 text-white pr-4">
-                          Residential
-                        </span>
-                      </div>
-                    </div>
-                    <div className='w-[20%] grayscale opacity-80 
-                    flex items-end justify-end border border-gray-400'
-                      style={{
-                        backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${Commercial})`,
-                        backgroundSize: 'auto 120%',
-                        backgroundPosition: 'center',
-                      }}>
-                      <div className="flex items-center w-full gap-4 py-4">
-                        <div className="w-full h-[0.5px] bg-gray-400 pl-4" />
-                        <span className="shrink-0 text-white pr-4">
-                          Commercial
-                        </span>
-                      </div>
-                    </div>
-                    <div className='w-[20%] grayscale opacity-80 
-                    flex items-end justify-end border border-gray-400'
-                      style={{
-                        backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${Industrial})`,
-                        backgroundSize: 'auto 120%',
-                        backgroundPosition: 'center',
-                      }}>
-                      <div className="flex items-center w-full gap-4 py-4">
-                        <div className="w-full h-[0.5px] bg-gray-400 pl-4" />
-                        <span className="shrink-0 text-white pr-4">
-                          Industrial
-                        </span>
-                      </div>
-                    </div>
-  
+                    <HeroCard 
+                        image = { HeroImage } 
+                        text = { 'Demo Builders' }
+                        selected = { false }
+                    />
+                    <HeroCard 
+                        image = { Residential } 
+                        text = { 'Residential' }
+                        selected = { false }
+                    />
+                    <HeroCard 
+                        image = { Commercial } 
+                        text = { 'Commercial' }
+                        selected = { false }
+                    />
+                    <HeroCard 
+                        image = { Industrial } 
+                        text = { 'Industrial' }
+                        selected = { true }
+                    />  
                   </div>
                 </div>
               </div>
