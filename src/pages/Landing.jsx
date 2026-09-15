@@ -1,7 +1,7 @@
 import HeroImage from '../assets/demo_hero.png'
 import Residential from '../assets/demo_residential.png'
 import Commercial from '../assets/demo_commercial.png'
-import Industrial from '../assets/demo_industrial.png'
+import Infrastructure from '../assets/demo_infrastructure.png'
 import AboutUsImage from '../assets/about_us.png'
 
 const HeroCard = ({ image, text, selected = false }) => {
@@ -16,12 +16,29 @@ const HeroCard = ({ image, text, selected = false }) => {
             }}>
             <div className={`flex items-center w-full py-4 ${selected ?  'gap-8' : 'gap-4'}`}>
             <div className={`w-full h-[0.5px] bg-gray-400 ${selected ?  'pl-8' : 'pl-4'} `} />
-            <span className={`shrink-0 text-white ${selected ?  'pr-8' : 'pr-4'}`}>
-                { text }
-            </span>
+                <span className={`shrink-0 text-white ${selected ?  'pr-8' : 'pr-4'}`}>
+                    { text }
+                </span>
             </div>
         </div>
         </>
+    )
+}
+
+const ProjectCard = ({ image, title, desc }) => {
+    return (
+        <div className='flex items-end h-132 pb-16 px-4 rounded-tr-4xl border border-gray-500'
+        style={{
+            backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${ image })`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+        }}>
+            <div className='flex flex-col w-full'>
+                <span className='text-xl font-semibold'>{ title }</span>
+                <span className='h-[0.5px] bg-white w-full mt-2 mb-4'></span>
+                <span>{ desc }</span>
+            </div>
+        </div>
     )
 }
 
@@ -86,8 +103,8 @@ const Landing = () => {
                         selected = { false }
                     />
                     <HeroCard 
-                        image = { Industrial } 
-                        text = { 'Industrial' }
+                        image = { Infrastructure } 
+                        text = { 'Infrastructure' }
                         selected = { true }
                     />  
                   </div>
@@ -98,7 +115,7 @@ const Landing = () => {
   
             </div>
             <img className='h-250 w-full'
-              src={Industrial} alt="Single Family Home" />
+              src={Infrastructure} alt="Single Family Home" />
           </div>
         </section>
         {/* About */}
@@ -127,9 +144,21 @@ const Landing = () => {
                 <br /> for delivering exceptional results across a diverse range of projects.</span>
                 <div>
                   <div className='grid grid-cols-3 gap-8'>
-                    <div className='h-132 bg-white'></div>
-                    <div className='h-132 bg-white'></div>
-                    <div className='h-132 bg-white'></div>
+                    <ProjectCard 
+                        image={ Residential }
+                        title={ 'Residential' }
+                        desc = { 'Horizontal / Vertical'}
+                    />
+                    <ProjectCard 
+                        image={ Commercial }
+                        title={ 'Commercial' }
+                        desc = { 'Mixed Use'}
+                    />
+                    <ProjectCard 
+                        image={ Infrastructure }
+                        title={ 'Infrastructure' }
+                        desc = { 'Transport'}
+                    />
                   </div>
                 </div>
           </div>
