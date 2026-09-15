@@ -1,3 +1,5 @@
+import { MdOutlineArrowOutward } from "react-icons/md";
+
 import HeroImage from '../assets/demo_hero.png'
 import Residential from '../assets/demo_residential.png'
 import Commercial from '../assets/demo_commercial.png'
