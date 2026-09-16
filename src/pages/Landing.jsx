@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
+
 import { MdOutlineArrowOutward } from "react-icons/md";
-import { ImQuotesLeft } from "react-icons/im";
 import { BiSolidQuoteLeft } from "react-icons/bi";
 
 import HeroImage from '../assets/demo_hero.png'
@@ -10,6 +11,8 @@ import AboutUsImage from '../assets/about_us.png'
 import PeopleImage from '../assets/demo_people.png'
 import CEOImage from '../assets/demo_ceo.png'
 import DealImage from '../assets/demo_deal.png'
+
+import FooterComponent from './Footer'
 
 const HeroCard = ({ image, text, selected = false }) => {
     return (
@@ -53,12 +56,26 @@ const ProjectCard = ({ image, title, desc }) => {
 }
 
 const Landing = () => {
-    const navlink_style = 'mr-6'
+    const navlink_style = 'mr-6 hover:border-t hover:border-gray-800'
+
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
         <>
-            <nav className="fixed w-screen flex justify-between py-8 z-10">
+            <nav className={`fixed w-screen flex justify-between transition z-10 
+                ${scrolled ? 'bg-white py-4 shadow-lg' : 'bg-transparent py-8 shadow-none'}`}>
                 <div className="flex flex-col w-fit items-center pl-16">
-                    <span className="bold text-4xl">Demo Builders</span>
+                    <span className="font-semibold text-4xl">Demo Builders</span>
                     <span className="text-lg italic">A CONSTRUCTION COMPANY</span>
                 </div>
                 <div className="flex flex-col justify-center">
@@ -66,9 +83,9 @@ const Landing = () => {
                         This is a demo website built by <a className='font-semibold' href='#'>Ancar Technologies</a>
                     </div>
                     <ul className="flex flex-row text-lg pl-2 pr-16">
-                        <li className={navlink_style}>Home</li>
-                        <li className={navlink_style}>About</li>
-                        <li className={navlink_style}>Services</li>
+                        <a className={navlink_style}>Home</a>
+                        <a className={navlink_style}>About</a>
+                        <a className={navlink_style}>Services</a>
                         <li className={navlink_style}>Our Portfolio</li>
                         <li className={navlink_style}>Contact Us</li>
                     </ul>
@@ -219,7 +236,7 @@ const Landing = () => {
                         </span>
                         <span>
                             <b>— Greg Heffley</b> <br />
-                            VP for Real Estate, <b>Heffley-Clinton Group</b> 
+                            VP for Real Estate, <b>Heffley-Tatum Group</b> 
                         </span>
                     </div>
                     <div className="w-full h-full"
@@ -232,6 +249,8 @@ const Landing = () => {
                     <div className="bg-gray-800" />
                 </div>
             </section>
+
+            <FooterComponent />
         </>
     )
 }
