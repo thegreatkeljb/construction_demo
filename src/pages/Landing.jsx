@@ -14,24 +14,35 @@ import DealImage from '../assets/demo_deal.png'
 
 import FooterComponent from './Footer'
 
-const HeroCard = ({ image, text, selected = false }) => {
+const HeroCard = ({ image, text, selected = false, onClick }) => {
     return (
-        <>
-            <div className={`${selected ? 'w-[40%]' : 'w-[20%] grayscale opacity-80'} 
-         flex items-end justify-end border border-gray-400 bg-linear-to-t from-black to-transparent`}
-                style={{
-                    backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'left',
-                }}>
-                <div className={`flex items-center w-full py-4 ${selected ? 'gap-8' : 'gap-4'}`}>
-                    <div className={`w-full h-[0.5px] bg-gray-400 ${selected ? 'pl-8' : 'pl-4'} `} />
-                    <span className={`shrink-0 text-white ${selected ? 'pr-8' : 'pr-4'}`}>
-                        {text}
-                    </span>
-                </div>
+        <div 
+            onClick={onClick}
+            className={`${selected ? 'w-[40%]' : 'w-[20%] grayscale opacity-80'}
+            flex items-end justify-end 
+            border border-gray-400 bg-linear-to-t from-black to-transparent
+            transition-all duration-500 ease-in-out`}
+            style={{
+                backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'left',
+            }}>
+            <div className={`flex items-center w-full py-4 ${selected ? 'gap-8' : 'gap-4'}`}>
+                <div className={`w-full h-[0.5px] bg-gray-400 ${selected ? 'pl-8' : 'pl-4'} `} />
+                <span className={`shrink-0 text-white ${selected ? 'pr-8' : 'pr-4'}`}>
+                    {text}
+                </span>
             </div>
-        </>
+        </div>
+    )
+}
+
+const HeroBlock = ({ selected = false, onClick }) => {
+    return (
+        <div 
+            className={`${selected ? 'bg-white' : 'bg-white/60'} size-8`} 
+            onClick={ onClick }
+        />  
     )
 }
 
@@ -59,6 +70,60 @@ const Landing = () => {
     const navlink_style = 'mr-6 hover:border-t hover:border-gray-800'
 
     const [scrolled, setScrolled] = useState(false)
+    const [selectedHero, setSelectedHero] = useState('demo')
+
+    const [slideDirection, setSlideDirection] = useState('right')
+
+    const heroOrder = [
+        'demo',
+        'residential',
+        'commercial',
+        'infrastructure'
+    ]
+
+    // const handleHeroChange = (hero) => {
+    //     const currentIndex = heroOrder.indexOf(selectedHero)
+    //     const newIndex = heroOrder.indexOf(hero)
+
+    //     setSlideDirection(newIndex > currentIndex ? 'right' : 'left')
+    //     setSelectedHero(hero)
+    // }
+
+    const handleHeroChange = (hero) => {
+    const currentIndex = heroOrder.indexOf(selectedHero)
+    const newIndex = heroOrder.indexOf(hero)
+
+        setSlideDirection(newIndex > currentIndex ? 'right' : 'left')
+        setSelectedHero(hero)
+    }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSelectedHero((current) => {
+                const currentIndex = heroOrder.indexOf(current)
+                const nextIndex = (currentIndex + 1) % heroOrder.length
+
+                setSlideDirection('right')
+                return heroOrder[nextIndex]
+            })
+        }, 3000)
+
+        return () => clearInterval(interval)
+    }, [])
+
+    const heroImages = {
+        demo: HeroImage,
+        residential: Residential,
+        commercial: Commercial,
+        infrastructure: Infrastructure,
+    }
+
+    const heroDescriptions = {
+        demo: 'Established in 2015, Demo Builders is owned and managed by trustworthy professionals with more than 12 years of experience in residential and commercial construction projects. We stand at the forefront of nation-building in the Philippines, Driven by a commitment to excellence.',
+        residential: `We specialize in building quality residential spaces designed for comfort, functionality, and lasting value. From single-family homes to larger residential developments, our team delivers projects with careful planning, quality workmanship, and attention to detail.`,
+        commercial: `We deliver commercial construction projects that combine functionality, durability, and thoughtful design. From office spaces and retail establishments to larger commercial developments, we work to create spaces that support businesses and meet the demands of everyday operations.`,
+        infrastructure: `We undertake infrastructure projects that contribute to the growth and development of communities. Our work focuses on delivering reliable, durable, and well-planned structures while maintaining high standards of safety, quality, and engineering throughout every stage of construction.`,
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -72,6 +137,40 @@ const Landing = () => {
 
     return (
         <>
+            <style>
+                {`
+                    @keyframes slideFromRight {
+                        from {
+                            opacity: .70;
+                            filter: blur(10px);
+                            transform: translateX(20%);
+                        }
+                        to {
+                            opacity: 1;
+                            filter: blur(0px);
+                            transform: translateX(0);
+                        }
+                    }
+                    @keyframes slideFromLeft {
+                        from {
+                            opacity: .70;
+                            filter: blur(10px);
+                            transform: translateX(-20%);
+                        }
+                        to {
+                            opacity: 1;
+                            filter: blur(0px);
+                            transform: translateX(0);
+                        }
+                    }
+                    .slide-right {
+                        animation: slideFromRight 240ms ease-in-out;
+                    }
+                    .slide-left {
+                        animation: slideFromLeft 240ms ease-in-out;
+                    }
+                `}
+            </style>
             <nav className={`fixed w-screen flex justify-between transition z-10 
                 ${scrolled ? 'bg-white py-4 shadow-lg' : 'bg-transparent py-8 shadow-none'}`}>
                 <div className="flex flex-col w-fit items-center pl-16">
@@ -93,53 +192,78 @@ const Landing = () => {
             </nav>
 
             <section>
-                <div className='absolute h-250 w-full flex justify-end items-end p-24
-            bg-linear-to-b from-gray-100/70 via-transparent to-gray-800/70'>
-                        <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-end'>
+                <div className='absolute h-250 w-full flex justify-end items-end p-24 transition-all ease-in
+                bg-linear-to-b from-gray-100/50 via-transparent to-gray-800/70 overflow-x-hidden'>
+                        <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-start'>
                             <div className='text-white'>
                                 <div className='text-2xl font-semibold mb-4'>WE BUILD TRUST</div>
-                                <div>
-                                    Established in 2015, Demo Builders is owned and managed by reliable and trustworthy professionals with more than 12 years of experience in residential and commercial construction projects.
-                                    <br />
-                                    Demo Builders stands at the forefront of nation-building in the Philippines, driven by a steadfast commitment to engineering excellence and innovation.
-                                </div>
-                                <div className='flex gap-2 mt-4'>
-                                    <div className='bg-white size-8' />
-                                    <div className='bg-white/60 size-8' />
-                                    <div className='bg-white/60 size-8' />
-                                    <div className='bg-white/60 size-8' />
+                                <p className="whitespace-pre-line text-lg">
+                                    {heroDescriptions[selectedHero]}
+                                </p>
+                                <div className='flex gap-2 mt-8'>
+                                    <HeroBlock
+                                        selected={selectedHero === 'demo'}
+                                        onClick={() => setSelectedHero('demo')}
+                                    />
+                                    <HeroBlock
+                                        selected={selectedHero === 'residential'}
+                                        onClick={() => setSelectedHero('residential')}
+                                    />
+                                    <HeroBlock
+                                        selected={selectedHero === 'commercial'}
+                                        onClick={() => setSelectedHero('commercial')}
+                                    />
+                                    <HeroBlock
+                                        selected={selectedHero === 'infrastructure'}
+                                        onClick={() => setSelectedHero('infrastructure')}
+                                    />
                                 </div>
                             </div>
                             <div>
                                 <div className='text-white text-2xl font-semibold mb-4'>WHAT WE DO</div>
-                                <div className='flex h-50'>
+                                <div className='flex h-50 transition-all ease-in-out'>
                                     <HeroCard
                                         image={HeroImage}
                                         text={'Demo Builders'}
-                                        selected={false}
+                                        selected={selectedHero === 'demo'}
+                                        onClick={() => setSelectedHero('demo')}
                                     />
                                     <HeroCard
                                         image={Residential}
                                         text={'Residential'}
-                                        selected={false}
+                                        selected={selectedHero === 'residential'}
+                                        onClick={() => setSelectedHero('residential')}
                                     />
                                     <HeroCard
                                         image={Commercial}
                                         text={'Commercial'}
-                                        selected={false}
+                                        selected={selectedHero === 'commercial'}
+                                        onClick={() => setSelectedHero('commercial')}
                                     />
                                     <HeroCard
                                         image={Infrastructure}
                                         text={'Infrastructure'}
-                                        selected={true}
+                                        selected={selectedHero === 'infrastructure'}
+                                        onClick={() => setSelectedHero('infrastructure')}
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='absolute h-250 w-full flex justify-end items-end' />
-                    <img className='h-250 w-full'
-                        src={Infrastructure} alt="Single Family Home" />
+                    <div className='absolute h-250 w-full flex justify-end items-end
+                    transition-all duration-500 ease-in-out' />
+                    <div className='overflow-hidden w-full'>
+                        <img
+                            key={selectedHero}
+                            className={`h-250 w-full object-cover ${
+                                slideDirection === 'left'
+                                    ? 'slide-right'
+                                    : 'slide-left'
+                            }`}
+                            src={heroImages[selectedHero]}
+                            alt={selectedHero}
+                        />
+                    </div>
             </section>
             {/* About */}
             <section >
