@@ -16,10 +16,10 @@ import FooterComponent from './Footer'
 
 const HeroCard = ({ image, text, selected = false, onClick }) => {
     return (
-        <div 
+        <button 
             onClick={onClick}
             className={`${selected ? 'w-[40%]' : 'w-[20%] grayscale opacity-80'}
-            flex items-end justify-end 
+            flex items-end justify-end hover:cursor-pointer
             border border-gray-400 bg-linear-to-t from-black to-transparent
             transition-all duration-500 ease-in-out`}
             style={{
@@ -33,14 +33,14 @@ const HeroCard = ({ image, text, selected = false, onClick }) => {
                     {text}
                 </span>
             </div>
-        </div>
+        </button>
     )
 }
 
 const HeroBlock = ({ selected = false, onClick }) => {
     return (
-        <div 
-            className={`${selected ? 'bg-white' : 'bg-white/60'} size-8`} 
+        <button 
+            className={`${selected ? 'bg-white' : 'bg-white/60'} size-8 hover:cursor-pointer`} 
             onClick={ onClick }
         />  
     )
