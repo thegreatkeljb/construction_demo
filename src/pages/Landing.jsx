@@ -48,18 +48,22 @@ const HeroBlock = ({ selected = false, onClick }) => {
 
 const ProjectCard = ({ image, title, desc }) => {
     return (
-        <div className='flex items-end h-132 pb-12 px-4 rounded-tr-4xl border border-gray-500'
+        <div className='hero-bg group flex items-end h-132 pb-12 px-4 rounded-tr-4xl border border-gray-500 
+        hover:cursor-pointer transition-all ease-in-out duration-300'
             style={{
                 backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${image})`,
                 backgroundPosition: 'center',
-                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+
             }}>
             <div className='flex flex-col w-full'>
                 <span className='text-2xl font-semibold'>{title}</span>
                 <span className='h-[0.5px] bg-white w-full mt-2 mb-4'></span>
                 <div className="flex justify-between items-center">
                     <span>{desc}</span>
-                    <MdOutlineArrowOutward className="size-8 p-1 border border-white" />
+                    <MdOutlineArrowOutward className="size-8 p-1 border border-white 
+                    group-hover:rounded-md 
+                    transition-all ease-in-out duration-400" />
                 </div>
             </div>
         </div>
@@ -80,14 +84,6 @@ const Landing = () => {
         'commercial',
         'infrastructure'
     ]
-
-    // const handleHeroChange = (hero) => {
-    //     const currentIndex = heroOrder.indexOf(selectedHero)
-    //     const newIndex = heroOrder.indexOf(hero)
-
-    //     setSlideDirection(newIndex > currentIndex ? 'right' : 'left')
-    //     setSelectedHero(hero)
-    // }
 
     const handleHeroChange = (hero) => {
     const currentIndex = heroOrder.indexOf(selectedHero)
@@ -168,6 +164,13 @@ const Landing = () => {
                     }
                     .slide-left {
                         animation: slideFromLeft 240ms ease-in-out;
+                    }
+                    .hero-bg {
+                        background-size: cover, cover;
+                    }
+
+                    .hero-bg:hover {
+                        background-size: cover, auto 101%;
                     }
                 `}
             </style>

@@ -48,7 +48,7 @@ const Footer = () => {
                 </span>
                 <button className='mt-6 w-fit border border-gray-800 px-6 py-3
                                 font-semibold hover:bg-gray-800
-                                hover:text-white transition'>
+                                hover:text-white hover:cursor-pointer'>
                     GET IN TOUCH
                 </button>
             </div>
