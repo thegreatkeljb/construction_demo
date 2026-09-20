@@ -31,7 +31,7 @@ const Nav = () => {
                 <Link to={'/'} className={navlink_style}>Home</Link>
                 <Link to={'about'} className={navlink_style}>About</Link>
                 <a className={navlink_style}>Services</a>
-                <li className={navlink_style}>Our Portfolio</li>
+                <Link to={'portfolio'} className={navlink_style}>Our Portfolio</Link>
                 <li className={navlink_style}>Contact Us</li>
             </ul>
         </div>

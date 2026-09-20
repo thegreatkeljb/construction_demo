@@ -5,6 +5,7 @@ import PagesTemplate from "./pages/templates/PagesTemplate";
 // Pages
 import Landing from './pages/Landing';
 import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
 
 const dev = createBrowserRouter([
   {
@@ -21,7 +22,16 @@ const dev = createBrowserRouter([
           {
             path: 'about',
             element: <About />
-          }
+          },
+        ]
+      },
+      {
+        element: <PagesTemplate Title="Our Portfolio"/>,
+        children: [
+          {
+            path: 'portfolio',
+            element: <Portfolio />
+          },
         ]
       }
     ]
