@@ -1,9 +1,8 @@
-import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      
+    <div className='flex justify-center'>
+      Hello, Michael John Ben Bataliran
     </div>
   )
 }

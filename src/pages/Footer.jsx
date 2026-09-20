@@ -25,7 +25,7 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-col'>
                     <span className='pb-8 text-xl font-semibold'>JOIN OUR NEWS LETTER</span>
-                    <span>Subscribe to our newsletter to recieve latest information on all of our projects.</span>
+                    <span>Subscribe to our newsletter to receive latest information on all of our projects.</span>
                     <div className='my-4 w-full'>
                         <input type="text" placeholder='Enter your email address' className='border border-white p-2 w-[64%]'/>
                         <button className='ml-4 border p-2 hover:bg-white hover:text-black hover:cursor-pointer'>SUBMIT</button>

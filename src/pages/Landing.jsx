@@ -3,16 +3,14 @@ import { useState, useEffect } from "react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { BiSolidQuoteLeft } from "react-icons/bi";
 
-import HeroImage from '../assets/demo_hero.png'
-import Residential from '../assets/demo_residential.png'
-import Commercial from '../assets/demo_commercial.png'
-import Infrastructure from '../assets/demo_infrastructure.png'
-import AboutUsImage from '../assets/about_us.png'
-import PeopleImage from '../assets/demo_people.png'
-import CEOImage from '../assets/demo_ceo.png'
-import DealImage from '../assets/demo_deal.png'
-
-import FooterComponent from './Footer'
+import HeroImage from '../assets/demo_hero.png';
+import Residential from '../assets/demo_residential.png';
+import Commercial from '../assets/demo_commercial.png';
+import Infrastructure from '../assets/demo_infrastructure.png';
+import AboutUsImage from '../assets/about_us.png';
+import PeopleImage from '../assets/demo_people.png';
+import CEOImage from '../assets/demo_ceo.png';
+import DealImage from '../assets/demo_deal.png';
 
 const HeroCard = ({ image, text, selected = false, onClick }) => {
     return (
@@ -344,8 +342,6 @@ const Landing = () => {
                     <div className="bg-gray-800" />
                 </div>
             </section>
-
-            <FooterComponent />
         </>
     )
 }

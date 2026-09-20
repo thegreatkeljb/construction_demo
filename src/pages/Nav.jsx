@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 const Nav = () => {
     const navlink_style = 'mr-6 hover:border-t hover:border-gray-800';
@@ -27,8 +28,8 @@ const Nav = () => {
                 This is a demo website built by <a className='font-semibold' href='#'>Ancar Technologies</a>
             </div>
             <ul className="flex flex-row text-lg pl-2 pr-16">
-                <a className={navlink_style}>Home</a>
-                <a className={navlink_style}>About</a>
+                <Link to={'/'} className={navlink_style}>Home</Link>
+                <Link to={'about'} className={navlink_style}>About</Link>
                 <a className={navlink_style}>Services</a>
                 <li className={navlink_style}>Our Portfolio</li>
                 <li className={navlink_style}>Contact Us</li>
