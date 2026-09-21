@@ -17,7 +17,7 @@ const Nav = () => {
     }, [])
 
   return (
-     <nav className={`fixed w-screen flex justify-between transition z-10 
+     <nav className={`fixed w-screen flex justify-between transition z-100 
         ${scrolled ? 'bg-white py-4 shadow-lg' : 'bg-transparent py-8 shadow-none'}`}>
         <div className="flex flex-col w-fit items-center pl-16">
             <span className="font-semibold text-4xl">Demo Builders</span>
@@ -29,9 +29,9 @@ const Nav = () => {
             </div>
             <ul className="flex flex-row text-lg pl-2 pr-16">
                 <Link to={'/'} className={navlink_style}>Home</Link>
-                <Link to={'about'} className={navlink_style}>About</Link>
+                <Link to={'/about'} className={navlink_style}>About</Link>
                 <a className={navlink_style}>Services</a>
-                <Link to={'portfolio'} className={navlink_style}>Our Portfolio</Link>
+                <Link to={'/portfolio'} className={navlink_style}>Our Portfolio</Link>
                 <li className={navlink_style}>Contact Us</li>
             </ul>
         </div>

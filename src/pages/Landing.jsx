@@ -97,7 +97,7 @@ const Landing = () => {
                 setSlideDirection('right')
                 return heroOrder[nextIndex]
             })
-        }, 3000)
+        }, 12000)
 
         return () => clearInterval(interval)
     }, [])
@@ -145,10 +145,10 @@ const Landing = () => {
                         }
                     }
                     .slide-right {
-                        animation: slideFromRight 240ms ease-in-out;
+                        animation: slideFromRight 500ms ease-in-out;
                     }
                     .slide-left {
-                        animation: slideFromLeft 240ms ease-in-out;
+                        animation: slideFromLeft 500ms ease-in-out;
                     }
                     .hero-bg {
                         background-size: cover, cover;
@@ -161,7 +161,8 @@ const Landing = () => {
             </style>
 
             <section>
-                <div className='absolute h-250 w-full flex justify-end items-end p-24 transition-all ease-in
+                <div className='absolute h-250 w-full flex justify-end items-end p-24 
+                transition-all ease-[cubic-bezier(0.22,1,0.36,1)] duration-1000
                 bg-linear-to-b from-gray-100/50 via-transparent to-gray-800/70 overflow-x-hidden'>
                         <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-start'>
                             <div className='text-white'>
@@ -219,13 +220,12 @@ const Landing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='absolute h-250 w-full flex justify-end items-end
-                    transition-all duration-500 ease-in-out' />
+                    <div className='absolute h-250 w-full flex justify-end items-end' />
                     <div className='overflow-hidden w-full'>
                         <img
                             key={selectedHero}
-                            className={`h-250 w-full object-cover ${
-                                slideDirection === 'left'
+                            className={`h-250 w-full object-cover
+                            ${slideDirection === 'left'
                                     ? 'slide-right'
                                     : 'slide-left'
                             }`}

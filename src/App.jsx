@@ -20,7 +20,7 @@ const dev = createBrowserRouter([
         element: <PagesTemplate Title="About Us"/>,
         children: [
           {
-            path: 'about',
+            path: '/about',
             element: <About />
           },
         ]
@@ -29,7 +29,7 @@ const dev = createBrowserRouter([
         element: <PagesTemplate Title="Our Portfolio"/>,
         children: [
           {
-            path: 'portfolio',
+            path: '/portfolio',
             element: <Portfolio />
           },
         ]
