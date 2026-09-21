@@ -8,6 +8,7 @@ import Landing from './pages/Landing';
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
+import ContactUs from "./pages/ContactUs";
 
 const dev = createBrowserRouter([
   {
@@ -46,6 +47,15 @@ const dev = createBrowserRouter([
           {
             path: '/services',
             element: <Services />
+          },
+        ]
+      },
+      {
+        element: <PagesTemplate Title="Contact Us"/>,
+        children: [
+          {
+            path: '/contact',
+            element: <ContactUs />
           },
         ]
       }

@@ -30,9 +30,9 @@ const Nav = () => {
             <ul className="flex flex-row text-lg pl-2 pr-16">
                 <Link to={'/'} className={navlink_style}>Home</Link>
                 <Link to={'/about'} className={navlink_style}>About</Link>
-                <Link to={ '/services' } className={navlink_style}>Services</Link>
+                <Link to={'/services'} className={navlink_style}>Services</Link>
                 <Link to={'/portfolio'} className={navlink_style}>Our Portfolio</Link>
-                <li className={navlink_style}>Contact Us</li>
+                <Link to={'/contact'} className={navlink_style}>Contact Us</Link>
             </ul>
         </div>
     </nav>
