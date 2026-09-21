@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 
 import Layout from "./pages/templates/Layout";
 import PagesTemplate from "./pages/templates/PagesTemplate";
+import ScrollToTop from "./pages/components/ScrollToTop";
 // Pages
 import Landing from './pages/Landing';
 import About from "./pages/About";
@@ -10,7 +11,11 @@ import Portfolio from "./pages/Portfolio";
 const dev = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: 
+    <>
+      <ScrollToTop />
+      <Layout />
+    </>,
     children: [
       {
         index: true,
