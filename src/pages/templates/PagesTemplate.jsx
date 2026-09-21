@@ -5,10 +5,11 @@ import IMG_1 from '../../assets/demo_infrastructure.png';
 import IMG_2 from '../../assets/demo_residential.png';
 import IMG_3 from '../../assets/demo_commercial.png';
 import IMG_4 from '../../assets/demo_people.png';
+import IMG_5 from '../../assets/project_loft.png';
 
 
 const PagesTemplate = ({ Title = "No Title" }) => {
-  const RANDOM_IMG = [IMG_1, IMG_2, IMG_3, IMG_4,];
+  const RANDOM_IMG = [IMG_1, IMG_2, IMG_3, IMG_4, IMG_5];
 
   const img = RANDOM_IMG[Math.floor(Math.random() * RANDOM_IMG.length)];
   return (

@@ -7,6 +7,7 @@ import ScrollToTop from "./pages/components/ScrollToTop";
 import Landing from './pages/Landing';
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
+import Services from "./pages/Services";
 
 const dev = createBrowserRouter([
   {
@@ -36,6 +37,15 @@ const dev = createBrowserRouter([
           {
             path: '/portfolio',
             element: <Portfolio />
+          },
+        ]
+      },
+      {
+        element: <PagesTemplate Title="Our Capabilities"/>,
+        children: [
+          {
+            path: '/services',
+            element: <Services />
           },
         ]
       }
