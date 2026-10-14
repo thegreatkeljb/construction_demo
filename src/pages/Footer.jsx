@@ -130,7 +130,7 @@ const Footer = () => {
 
             {/* Toast */}
             <div
-                className="fixed bottom-8 left-8 z-10 -translate-x-0"
+                className="fixed bottom-8 left-8 z-10 translate-x-0"
             >
                 {toasts.map((t) => (
                     <SwipeToast

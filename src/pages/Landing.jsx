@@ -14,7 +14,21 @@ import DealImage from '../assets/demo_deal.png';
 import SkylineBG from '../assets/skyline_bg.jfif'
 import DemoBuildersLogo from '../assets/demo_builders/demobuilders_logo.png'
 
+//Logos
+import ancartech from '../assets/logos/ancartechnologies.png';
+import porsche from '../assets/logos/porsche.png';
+import blackdecker from '../assets/logos/blackdecker.png';
+import chanel from '../assets/logos/chanel.png';
+import mcdo from '../assets/logos/mcdo.png';
+import nba from '../assets/logos/nba.png';
+import puregold from '../assets/logos/puregold.png';
+import starbucks from '../assets/logos/starbucks.png';
+import blackrock from '../assets/logos/blackrock.png';
+import toyota from '../assets/logos/toyota.png';
+
 import StaggerReveal from "./components/StaggerReveal";
+import InfiniteCarousel from "./components/InfiniteCarousel";
+import LogoStrip from "./components/LogoStrip";
 
 const HeroCard = ({ image, text, selected = false, onClick }) => {
     return (
@@ -80,6 +94,7 @@ const ProjCard = ({ stats, category }) => {
         </div>
     )
 }
+
 
 const Landing = () => {
     const [selectedHero, setSelectedHero] = useState('demo')
@@ -275,10 +290,16 @@ const Landing = () => {
                 </div>
             </section>
             {/* About */}
-            <section >
+            {/* Paste this over your existing <section>. Imports and `statistics` stay as they are.
+    Three changes:
+      1. the z-10 wrapper is now `w-full`
+      2. the w-360 content block is centred with `mx-auto`
+      3. <LogoStrip /> moved OUT of the w-360 / p-24 block, so it spans the whole page */}
+
+            <section>
                 <div className="relative h-250 w-full flex items-center justify-center
-                    before:absolute before:inset-0 before:bg-cover before:bg-center
-                    before:bg-no-repeat before:opacity-30"
+        before:absolute before:inset-0 before:bg-cover before:bg-center
+        before:bg-no-repeat before:opacity-30"
                     style={{
                         "--bg-image": `url(${SkylineBG})`,
                     }}>
@@ -292,8 +313,8 @@ const Landing = () => {
                             opacity: 0.03,
                         }} />
 
-                    <div className="relative z-10">
-                        <div className='w-360 flex flex-col p-24'>
+                    <div className="relative z-10 w-full">
+                        <div className='mx-auto w-360 flex flex-col p-24'>
                             <div className=" grid grid-cols-2 gap-24">
                                 <div className='flex flex-col items-center '>
                                     <img className="h-auto w-28 mb-16"
@@ -315,23 +336,27 @@ const Landing = () => {
                                         />
                                     ))}
                                 </StaggerReveal>
-
                             </div>
-
-                            {/* <img className='w-280 scale-105' src={AboutUsImage} alt="" /> */}
                         </div>
+                        <LogoStrip
+                            label="Trusted by leading companies"
+                            logos={[
+                                { src: ancartech, alt: "Ancar Technologies" },
+                                { src: porsche, alt: "Porsche" },
+                                { src: blackdecker, alt: "Black Decker" },
+                                { src: chanel, alt: "Chanel" },
+                                { src: mcdo, alt: "McDonalds" },
+                                { src: nba, alt: "NBA" },
+                                { src: puregold, alt: "Puregold" },
+                                { src: starbucks, alt: "Starbucks" },
+                                { src: blackrock, alt: "Blackrock" },
+                                { src: toyota, alt: "Toyota" },
+                            ]}
+                        />
                     </div>
                 </div>
-                {/* <div className='h-250 w-full flex items-center justify-center opacity-25'
-                style={{
-                    backgroundImage: `url(${SkylineBG})`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center'
-                }}>
-                    
-                </div> */}
             </section>
+
             {/* Projects */}
             <section className='flex justify-center bg-gray-800 py-16'>
                 <div className='flex flex-col w-280 bg-gray-800 text-white'>
