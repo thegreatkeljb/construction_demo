@@ -399,8 +399,8 @@ const Landing = () => {
                         }}
                     />
                 </div>
-                <div className="grid grid-cols-[.5fr_1fr_1.5fr_0.5fr] gap-4 w-full mt-32">
-                    <div className="bg-gray-800">
+                <StaggerReveal direction="up" className="grid grid-cols-[.5fr_1fr_1.5fr_0.5fr] gap-4 w-full mt-32">
+                    <div className="bg-gray-800 h-full">
                         <BiSolidQuoteLeft className="h-full w-full fill-white" />
                     </div>
                     <div className="flex flex-col bg-gray-800 text-white p-16">
@@ -419,8 +419,8 @@ const Landing = () => {
                             backgroundPosition: 'center'
                         }}
                     />
-                    <div className="bg-gray-800" />
-                </div>
+                    <div className="bg-gray-800 h-full" />
+                </StaggerReveal>
             </section>
         </>
     )
