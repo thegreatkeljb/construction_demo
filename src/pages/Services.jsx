@@ -5,6 +5,8 @@ import project from '../assets/services/project_mng.jpg';
 import renovation from '../assets/services/renovation.jpg';
 import residential from '../assets/services/residential.jpg';
 
+import StaggerReveal from './components/StaggerReveal';
+
 
 const ServicesCard = ({ img, title, desc }) => {
     const subtitle_style = 'font-semibold mt-8 mb-2 text-xl'
@@ -65,7 +67,7 @@ const Services = () => {
     ]
   return (
     <div>
-        <div className="flex flex-col mt-12 text-lg">
+        <StaggerReveal direction='up' className="flex flex-col mt-12 text-lg">
             {content.map((content) => (
                 <ServicesCard 
                     key={content.title}
@@ -74,7 +76,7 @@ const Services = () => {
                     desc={content.desc}
                 />
             ))}
-      </div>
+      </StaggerReveal>
     </div>
   )
 }

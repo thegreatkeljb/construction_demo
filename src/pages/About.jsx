@@ -3,6 +3,9 @@ import COO from '../assets/leadership/coo.jpg'
 import HEADCONST from '../assets/leadership/head_const.jpg'
 import PROJDIR from '../assets/leadership/proj_dir.jpg'
 
+import StaggerReveal from './components/StaggerReveal'
+
+
 const ProfileCard = ({ image, name, title }) => {
   return (
     <div className='pl-4 pt-2 border-l-2 border-gray-800 text-black'>
@@ -77,7 +80,7 @@ const About = () => {
         <span className="text-2xl font-semibold mb-2">15+ Years of Experience</span>
         <span>With more than 15 years in the construction industry, our experience spans a wide range of projects and environments.
         Our team understands that every project comes with its own requirements, challenges, and expectations. We approach each one with careful planning, attention to detail, and a commitment to delivering work to a high standard.</span>
-        <div className="grid grid-cols-4 gap-4 h-32 mt-8">
+        <StaggerReveal direction='up' className="grid grid-cols-4 gap-4 h-32 mt-8">
            {statistics.map((statistics) => (
               <ProjCard
                 key={statistics.stats}
@@ -85,7 +88,7 @@ const About = () => {
                 category={statistics.category}
               />
             ))}
-        </div>
+        </StaggerReveal>
       </div>
       {/* Values */}
       <div className="flex flex-col mt-12">
@@ -117,7 +120,7 @@ const About = () => {
         <span className="text-2xl font-semibold mb-2">Our Leadership</span>
         Behind every successful project is a team that understands how to turn plans into action. <br />
         Our leadership team brings together experience across construction, project management, engineering, and business operations. Together, they provide the direction and accountability needed to deliver projects efficiently and responsibly.
-        <div className="grid grid-cols-4 gap-4 h-100 mt-4">
+        <StaggerReveal direction='up' className="grid grid-cols-4 gap-4 h-100 mt-4">
            {leaders.map((leader) => (
               <ProfileCard
                 key={leader.name}
@@ -126,7 +129,7 @@ const About = () => {
                 title={leader.title}
               />
             ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )

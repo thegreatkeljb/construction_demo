@@ -6,6 +6,8 @@ import IMG_3 from '../assets/demo_commercial.png';
 import IMG_4 from '../assets/project_loft.png';
 import IMG_5 from '../assets/project_housing.png';
 
+import StaggerReveal from "./components/StaggerReveal";
+
 const ProjectCard = ({ img, name = "No Title", category, status }) => {
 
     return (
@@ -82,7 +84,7 @@ const Portfolio = () => {
         },
     ]
   return (
-    <div className="grid grid-cols-2 gap-8">
+    <StaggerReveal direction="up" className="grid grid-cols-2 gap-8">
        {projects.map((projects) => (
             <ProjectCard
                 key={projects.name}
@@ -92,7 +94,7 @@ const Portfolio = () => {
                 status={projects.status}
             />
         ))}
-    </div>
+    </StaggerReveal>
   )
 }
 

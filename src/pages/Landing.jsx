@@ -14,6 +14,8 @@ import DealImage from '../assets/demo_deal.png';
 import SkylineBG from '../assets/skyline_bg.jfif'
 import DemoBuildersLogo from '../assets/demo_builders/demobuilders_logo.png'
 
+import StaggerReveal from "./components/StaggerReveal";
+
 const HeroCard = ({ image, text, selected = false, onClick }) => {
     return (
         <button
@@ -71,12 +73,12 @@ const ProjectCard = ({ image, title, desc }) => {
 }
 
 const ProjCard = ({ stats, category }) => {
-  return (
-    <div className='flex flex-col h-full text-center justify-center p-8 rounded-xl border border-gray-200'>
-        <span className='font-semibold text-5xl pb-4'>{ stats }</span>
-        <span>{ category }</span>
-    </div>
-  )
+    return (
+        <div className='flex flex-col h-full text-center justify-center p-8 rounded-xl border border-gray-200'>
+            <span className='font-semibold text-5xl pb-4'>{stats}</span>
+            <span>{category}</span>
+        </div>
+    )
 }
 
 const Landing = () => {
@@ -93,28 +95,28 @@ const Landing = () => {
 
     const statistics = [
         {
-        stats: '15+',
-        category: 'Years of Experience',
+            stats: '15+',
+            category: 'Years of Experience',
         },
         {
-        stats: '100+',
-        category: 'Projects Completed',
+            stats: '100+',
+            category: 'Projects Completed',
         },
         {
-        stats: '50+',
-        category: 'Professionals & Partners',
+            stats: '50+',
+            category: 'Professionals & Partners',
         },
         {
-        stats: '2B+',
-        category: 'Total Portfolio Revenue',
+            stats: '2B+',
+            category: 'Total Portfolio Revenue',
         },
         {
-        stats: 'AAA',
-        category: 'Licensed Contractor',
+            stats: 'AAA',
+            category: 'Licensed Contractor',
         },
         {
-        stats: '900+',
-        category: 'Total Employees',
+            stats: '900+',
+            category: 'Total Employees',
         },
     ];
 
@@ -304,16 +306,16 @@ const Landing = () => {
                                         Grounded in our values and driven by a pursuit of excellence, we build with purpose, creating lasting structures and a stronger foundation for generations to come.
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-3 gap-4 items-center">
+                                <StaggerReveal direction="up" className="grid grid-cols-3 gap-4 items-center">
                                     {statistics.map((statistics) => (
-                                    <ProjCard
-                                        key={statistics.stats}
-                                        stats={statistics.stats}
-                                        category={statistics.category}
-                                    />
-                                ))}
-                                </div>
-                                
+                                        <ProjCard
+                                            key={statistics.stats}
+                                            stats={statistics.stats}
+                                            category={statistics.category}
+                                        />
+                                    ))}
+                                </StaggerReveal>
+
                             </div>
 
                             {/* <img className='w-280 scale-105' src={AboutUsImage} alt="" /> */}
@@ -337,7 +339,7 @@ const Landing = () => {
                     <span className='pt-2 pb-12'>Demo Builders is a trusted leader in the construction sector, renowned
                         <br /> for delivering exceptional results across a diverse range of projects.</span>
                     <div>
-                        <div className='grid grid-cols-3 gap-8'>
+                        <StaggerReveal direction="up" className="grid grid-cols-3 gap-8">
                             <ProjectCard
                                 image={Residential}
                                 title={'Residential'}
@@ -353,7 +355,7 @@ const Landing = () => {
                                 title={'Infrastructure'}
                                 desc={'Transportation'}
                             />
-                        </div>
+                        </StaggerReveal>
                     </div>
                 </div>
             </section>
