@@ -22,15 +22,15 @@ const Footer = () => {
         <footer>
             {/* Main Footer */}
             <div className="bg-gray-800 text-white">
-                <div className="grid grid-cols-[1.5fr_0.5fr_1fr] gap-4 p-16">
+                <div className="text-center grid grid-cols-1 lg:grid-cols-[1.5fr_0.5fr_1fr] gap-4 px-8 py-16 md:px-16">
 
                     {/* About */}
-                    <div className="flex w-fit flex-col pl-16">
+                    <div className="flex w-fit flex-col pb-16 lg:pb-0 lg:pl-16">
                         <span className="text-5xl font-semibold">
                             DEMO BUILDERS
                         </span>
 
-                        <span className="mt-8 w-[80%] italic">
+                        <span className="mt-8 w-full lg:w-[80%] italic">
                             Disclaimer: This website is a demonstration
                             project created by 
                             <a className="hover:underline" href="https://ancartechnologies.onrender.com/"><b> Ancar Technologies </b></a> 
@@ -71,7 +71,7 @@ const Footer = () => {
                     </div>
 
                     {/* Newsletter */}
-                    <div className="flex flex-col">
+                    <div className="flex-col hidden lg:flex">
                         <span className="pb-8 text-xl font-semibold">
                             JOIN OUR NEWSLETTER
                         </span>
