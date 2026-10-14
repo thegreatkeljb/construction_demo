@@ -237,7 +237,7 @@ const Landing = () => {
                         }} />
 
                     <div className="relative z-10 w-full pb-24 xl:pb-0">
-                        <div className='mx-auto w-full px-8 sm:px-0 sm:max-w-140 md:max-w-180 lg:max-w-240 xl:max-w-300 2xl:max-w-360
+                        <div className='mx-auto w-full px-24 xl:max-w-300 2xl:max-w-360
                          flex flex-col p-24'>
                             <div className=" grid grid-cols-1 xl:grid-cols-2 gap-24">
                                 <div className='flex flex-col items-center '>
@@ -282,13 +282,13 @@ const Landing = () => {
             </section>
 
             {/* Projects */}
-            <section className='flex justify-center bg-gray-800 py-16'>
-                <div className='flex flex-col w-280 bg-gray-800 text-white'>
+            <section className='flex justify-center bg-gray-800 py-24 xl:py-32'>
+                <div className='flex flex-col w-full px-24 xl:p-0 xl:w-280 bg-gray-800 text-white'>
                     <span className='text-4xl font-semibold'>Where Engineering Meets Excellence</span>
-                    <span className='pt-2 pb-12'>Demo Builders is a trusted leader in the construction sector, renowned
+                    <span className='mt-8 mb-4'>Demo Builders is a trusted leader in the construction sector, renowned
                         <br /> for delivering exceptional results across a diverse range of projects.</span>
                     <div>
-                        <StaggerReveal direction="up" className="grid grid-cols-3 gap-8">
+                        <StaggerReveal direction="up" className="grid xl:grid-cols-3 gap-8">
                             <ProjectCard
                                 image={Residential}
                                 title={'Residential'}
@@ -310,13 +310,13 @@ const Landing = () => {
             </section>
             {/* People */}
             <section className="flex flex-col justify-center items-center pt-24 pb-32">
-                <div className="flex flex-col py-16 w-full lg:w-240 text-center">
+                <div className="flex flex-col w-full px-24 xl:px-0 lg:w-240 text-center">
                     <span className='text-3xl font-semibold'>Excellence Starts With Our People</span>
-                    <span className='text-lg mt-4 mb-8'>
+                    <span className='text-lg mt-8 pb-16 lg:pb-0 lg:mb-16 border-b lg:border-0'>
                         At Demo Builders, we believe exceptional work begins with exceptional people. We are committed to investing in our team’s growth, safety, and well-being, creating an environment where every individual is empowered to build with skill, confidence, and pride.
                     </span>
                 </div>
-                <div className="grid grid-cols-[0.5fr_1fr] h-80 w-full">
+                <div className="hidden lg:grid grid-cols-[0.3fr_1fr] xl:grid-cols-[0.5fr_1fr] h-64 xl:h-80 w-full">
                     <div />
                     <div
                         style={{
@@ -329,9 +329,9 @@ const Landing = () => {
             </section>
             {/* Client Feedback */}
             <section className='flex flex-col justify-center items-center pb-16'>
-                <div className="grid grid-cols-2 gap-16 lg:200 xl:w-280">
+                <div className="h-fit flex flex-col-reverse items-center w-full px-24 lg:grid lg:grid-cols-2 lg:gap-16 xl:w-280">
                     <div className="flex flex-col pt-4 pb-16">
-                        <span className='text-3xl font-semibold'>What Our Clients Say</span>
+                        <span className='hidden lg:inline-block text-3xl font-semibold'>What Our Clients Say</span>
                         <span className='text-xl mt-8 mb-12'>
                             “Working with Demo Builders was a great experience from start to finish. Their team was professional, reliable, and attentive to every detail throughout the project. They understood our vision, communicated clearly, and delivered quality work that we can be proud of. We truly appreciate their commitment and would gladly work with them again.”
                         </span>
@@ -340,7 +340,7 @@ const Landing = () => {
                             Chief Executive Officer, <b>McArthur Foods Inc.</b>
                         </span>
                     </div>
-                    <div className="w-full h-full"
+                    <div className="h-80 w-80 rounded-full lg:rounded-none lg:w-full lg:h-full"
                         style={{
                             backgroundImage: `url(${CEOImage})`,
                             backgroundSize: 'cover',
@@ -348,11 +348,13 @@ const Landing = () => {
                         }}
                     />
                 </div>
-                <StaggerReveal direction="up" className="grid grid-cols-[.5fr_1fr_1.5fr_0.5fr] gap-4 w-full mt-32">
-                    <div className="bg-gray-800 h-full">
+                <StaggerReveal direction="up" className="bg-gray-800 w-full mt-16 lg:mt-32 pt-24 lg:pt-0
+                lg:bg-transparent grid lg:gap-4 
+                grid-cols-1 lg:grid-cols-[.5fr_1.5fr_1.5fr] xl:grid-cols-[.5fr_1fr_1.5fr_0.5fr]">
+                    <div className="h-36 lg:bg-gray-800 lg:h-full">
                         <BiSolidQuoteLeft className="h-full w-full fill-white" />
                     </div>
-                    <div className="flex flex-col bg-gray-800 text-white p-16">
+                    <div className="flex flex-col lg:bg-gray-800 text-white p-16">
                         <span className='text-xl mt-8 mb-12'>
                             “Demo Builders turned our vision for our commercial space into a reality. From planning to completion, their team was professional, organized, and committed to delivering quality work. They handled every detail with care and kept the project moving efficiently. We’re very pleased with the result and proud of the space they built for our business.”
                         </span>
