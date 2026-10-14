@@ -11,7 +11,7 @@ import StaggerReveal from "./components/StaggerReveal";
 const ProjectCard = ({ img, name = "No Title", category, status }) => {
 
     return (
-        <div className='border border-gray-800 h-120'
+        <div className='border border-gray-800 h-64 md:h-120'
         style={{
             backgroundImage: `url(${ img })`,
             backgroundPosition: 'center',
@@ -36,7 +36,7 @@ const ProjectCard = ({ img, name = "No Title", category, status }) => {
                         <span className='uppercase'>{ category }</span>
                     </div>
                     <div
-                    className="flex flex-row items-center
+                    className="hidden md:flex flex-row items-center
                     mt-2 pt-4 border-t border-gray-400
                     opacity-0 translate-y-10
                     group-hover:opacity-100
@@ -84,7 +84,7 @@ const Portfolio = () => {
         },
     ]
   return (
-    <StaggerReveal direction="up" className="grid grid-cols-2 gap-8">
+    <StaggerReveal direction="up" className="grid grid-cols-1 gap-16 2xl:grid-cols-2 2xl:gap-8">
        {projects.map((projects) => (
             <ProjectCard
                 key={projects.name}
