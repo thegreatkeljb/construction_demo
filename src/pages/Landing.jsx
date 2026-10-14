@@ -216,18 +216,13 @@ const Landing = () => {
                 `}
             </style>
 
+            {/* Whole hero section component */}
             <HeroSection />
-            {/* About */}
-            {/* Paste this over your existing <section>. Imports and `statistics` stay as they are.
-    Three changes:
-      1. the z-10 wrapper is now `w-full`
-      2. the w-360 content block is centred with `mx-auto`
-      3. <LogoStrip /> moved OUT of the w-360 / p-24 block, so it spans the whole page */}
 
             <section>
-                <div className="relative h-250 w-full flex items-center justify-center
-        before:absolute before:inset-0 before:bg-cover before:bg-center
-        before:bg-no-repeat before:opacity-30"
+                <div className="relative h-full xl:h-250 w-full flex items-center justify-center
+                before:absolute before:inset-0 before:bg-cover before:bg-center
+                before:bg-no-repeat before:opacity-30"
                     style={{
                         "--bg-image": `url(${SkylineBG})`,
                     }}>
@@ -241,9 +236,10 @@ const Landing = () => {
                             opacity: 0.03,
                         }} />
 
-                    <div className="relative z-10 w-full">
-                        <div className='mx-auto w-360 flex flex-col p-24'>
-                            <div className=" grid grid-cols-2 gap-24">
+                    <div className="relative z-10 w-full pb-24 xl:pb-0">
+                        <div className='mx-auto w-full px-8 sm:px-0 sm:max-w-140 md:max-w-180 lg:max-w-240 xl:max-w-300 2xl:max-w-360
+                         flex flex-col p-24'>
+                            <div className=" grid grid-cols-1 xl:grid-cols-2 gap-24">
                                 <div className='flex flex-col items-center '>
                                     <img className="h-auto w-28 mb-16"
                                         src={DemoBuildersLogo} alt="Demo Builders Logo" />
@@ -255,7 +251,7 @@ const Landing = () => {
                                         Grounded in our values and driven by a pursuit of excellence, we build with purpose, creating lasting structures and a stronger foundation for generations to come.
                                     </div>
                                 </div>
-                                <StaggerReveal direction="up" className="grid grid-cols-3 gap-4 items-center">
+                                <StaggerReveal direction="up" className="grid grid-cols-2 md:grid-cols-3 gap-4 items-center">
                                     {statistics.map((statistics) => (
                                         <ProjCard
                                             key={statistics.stats}
@@ -266,7 +262,7 @@ const Landing = () => {
                                 </StaggerReveal>
                             </div>
                         </div>
-                        <LogoStrip
+                        <LogoStrip 
                             label="Trusted by leading companies"
                             logos={[
                                 { src: ancartech, alt: "Ancar Technologies" },
@@ -314,7 +310,7 @@ const Landing = () => {
             </section>
             {/* People */}
             <section className="flex flex-col justify-center items-center pt-24 pb-32">
-                <div className="flex flex-col py-16 w-240 text-center">
+                <div className="flex flex-col py-16 w-full lg:w-240 text-center">
                     <span className='text-3xl font-semibold'>Excellence Starts With Our People</span>
                     <span className='text-lg mt-4 mb-8'>
                         At Demo Builders, we believe exceptional work begins with exceptional people. We are committed to investing in our team’s growth, safety, and well-being, creating an environment where every individual is empowered to build with skill, confidence, and pride.
@@ -333,7 +329,7 @@ const Landing = () => {
             </section>
             {/* Client Feedback */}
             <section className='flex flex-col justify-center items-center pb-16'>
-                <div className="grid grid-cols-2 gap-16 w-280">
+                <div className="grid grid-cols-2 gap-16 lg:200 xl:w-280">
                     <div className="flex flex-col pt-4 pb-16">
                         <span className='text-3xl font-semibold'>What Our Clients Say</span>
                         <span className='text-xl mt-8 mb-12'>
