@@ -39,7 +39,7 @@ const HeroCard = ({ image, text, selected = false, onClick }) => {
         <button
             onClick={onClick}
             className={`${selected ? 'w-[40%]' : 'w-[20%] grayscale opacity-80'}
-            flex items-end justify-end hover:cursor-pointer
+            flex items-end justify-end hover:cursor-pointer overflow-x-hidden
             border border-gray-400 bg-linear-to-t from-black to-transparent
             transition-all duration-500 ease-in-out`}
             style={{
@@ -47,9 +47,9 @@ const HeroCard = ({ image, text, selected = false, onClick }) => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'left',
             }}>
-            <div className={`flex items-center w-full py-4 ${selected ? 'gap-8' : 'gap-4'}`}>
+            <div className={`hidden 2xl:flex items-center w-full py-4 ${selected ? 'gap-8' : 'gap-4'}`}>
                 <div className={`w-full h-[0.5px] bg-gray-400 ${selected ? 'pl-8' : 'pl-4'} `} />
-                <span className={`shrink-0 text-white ${selected ? 'pr-8' : 'pr-4'}`}>
+                <span className={`2xl:text-sm shrink-0 text-white ${selected ? 'pr-8' : 'pr-4'}`}>
                     {text}
                 </span>
             </div>
@@ -149,9 +149,9 @@ export default function HeroSlider() {
                 ))}
 
                 {/* Overlay with text and controls */}
-                <div className='absolute inset-0 z-30 flex justify-end items-end p-24
+                <div className='absolute inset-0 z-30 flex justify-start items-end p-24
                     bg-linear-to-b from-gray-100/50 via-transparent to-gray-800/70 overflow-x-hidden'>
-                    <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-start'>
+                    <div className='xl:grid grid-cols-[1fr_1.5fr] gap-36 xl:gap-60 2xl:gap-82 z-5 h-60 w-full items-start'>
                         <div className='text-white'>
                             <div className='text-2xl font-semibold mb-4'>WE BUILD TRUST</div>
                             <p key={slide.key} className="hero-text-in whitespace-pre-line text-lg">
@@ -168,7 +168,7 @@ export default function HeroSlider() {
                                 ))}
                             </div>
                         </div>
-                        <div>
+                        <div className="hidden xl:inline-block">
                             <div className='text-white text-2xl font-semibold mb-4'>WHAT WE DO</div>
                             <div className='flex h-50 transition-all ease-in-out'>
                                 {SLIDES.map((s, i) => (
