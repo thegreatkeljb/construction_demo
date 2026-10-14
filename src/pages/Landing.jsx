@@ -11,10 +11,12 @@ import AboutUsImage from '../assets/about_us.png';
 import PeopleImage from '../assets/demo_people.png';
 import CEOImage from '../assets/demo_ceo.png';
 import DealImage from '../assets/demo_deal.png';
+import SkylineBG from '../assets/skyline_bg.jfif'
+import DemoBuildersLogo from '../assets/demo_builders/demobuilders_logo.png'
 
 const HeroCard = ({ image, text, selected = false, onClick }) => {
     return (
-        <button 
+        <button
             onClick={onClick}
             className={`${selected ? 'w-[40%]' : 'w-[20%] grayscale opacity-80'}
             flex items-end justify-end hover:cursor-pointer
@@ -37,10 +39,10 @@ const HeroCard = ({ image, text, selected = false, onClick }) => {
 
 const HeroBlock = ({ selected = false, onClick }) => {
     return (
-        <button 
-            className={`${selected ? 'bg-white' : 'bg-white/60'} size-8 hover:cursor-pointer`} 
-            onClick={ onClick }
-        />  
+        <button
+            className={`${selected ? 'bg-white' : 'bg-white/60'} size-8 hover:cursor-pointer`}
+            onClick={onClick}
+        />
     )
 }
 
@@ -68,6 +70,15 @@ const ProjectCard = ({ image, title, desc }) => {
     )
 }
 
+const ProjCard = ({ stats, category }) => {
+  return (
+    <div className='flex flex-col h-full text-center justify-center p-8 rounded-xl border border-gray-200'>
+        <span className='font-semibold text-5xl pb-4'>{ stats }</span>
+        <span>{ category }</span>
+    </div>
+  )
+}
+
 const Landing = () => {
     const [selectedHero, setSelectedHero] = useState('demo')
 
@@ -80,9 +91,36 @@ const Landing = () => {
         'infrastructure'
     ]
 
+    const statistics = [
+        {
+        stats: '15+',
+        category: 'Years of Experience',
+        },
+        {
+        stats: '100+',
+        category: 'Projects Completed',
+        },
+        {
+        stats: '50+',
+        category: 'Professionals & Partners',
+        },
+        {
+        stats: '2B+',
+        category: 'Total Portfolio Revenue',
+        },
+        {
+        stats: 'AAA',
+        category: 'Licensed Contractor',
+        },
+        {
+        stats: '900+',
+        category: 'Total Employees',
+        },
+    ];
+
     const handleHeroChange = (hero) => {
-    const currentIndex = heroOrder.indexOf(selectedHero)
-    const newIndex = heroOrder.indexOf(hero)
+        const currentIndex = heroOrder.indexOf(selectedHero)
+        const newIndex = heroOrder.indexOf(hero)
 
         setSlideDirection(newIndex > currentIndex ? 'right' : 'left')
         setSelectedHero(hero)
@@ -164,93 +202,133 @@ const Landing = () => {
                 <div className='absolute h-250 w-full flex justify-end items-end p-24 
                 transition-all ease-[cubic-bezier(0.22,1,0.36,1)] duration-1000
                 bg-linear-to-b from-gray-100/50 via-transparent to-gray-800/70 overflow-x-hidden'>
-                        <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-start'>
-                            <div className='text-white'>
-                                <div className='text-2xl font-semibold mb-4'>WE BUILD TRUST</div>
-                                <p className="whitespace-pre-line text-lg">
-                                    {heroDescriptions[selectedHero]}
-                                </p>
-                                <div className='flex gap-2 mt-8'>
-                                    <HeroBlock
-                                        selected={selectedHero === 'demo'}
-                                        onClick={() => setSelectedHero('demo')}
-                                    />
-                                    <HeroBlock
-                                        selected={selectedHero === 'residential'}
-                                        onClick={() => setSelectedHero('residential')}
-                                    />
-                                    <HeroBlock
-                                        selected={selectedHero === 'commercial'}
-                                        onClick={() => setSelectedHero('commercial')}
-                                    />
-                                    <HeroBlock
-                                        selected={selectedHero === 'infrastructure'}
-                                        onClick={() => setSelectedHero('infrastructure')}
-                                    />
-                                </div>
+                    <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-start'>
+                        <div className='text-white'>
+                            <div className='text-2xl font-semibold mb-4'>WE BUILD TRUST</div>
+                            <p className="whitespace-pre-line text-lg">
+                                {heroDescriptions[selectedHero]}
+                            </p>
+                            <div className='flex gap-2 mt-8'>
+                                <HeroBlock
+                                    selected={selectedHero === 'demo'}
+                                    onClick={() => setSelectedHero('demo')}
+                                />
+                                <HeroBlock
+                                    selected={selectedHero === 'residential'}
+                                    onClick={() => setSelectedHero('residential')}
+                                />
+                                <HeroBlock
+                                    selected={selectedHero === 'commercial'}
+                                    onClick={() => setSelectedHero('commercial')}
+                                />
+                                <HeroBlock
+                                    selected={selectedHero === 'infrastructure'}
+                                    onClick={() => setSelectedHero('infrastructure')}
+                                />
                             </div>
-                            <div>
-                                <div className='text-white text-2xl font-semibold mb-4'>WHAT WE DO</div>
-                                <div className='flex h-50 transition-all ease-in-out'>
-                                    <HeroCard
-                                        image={HeroImage}
-                                        text={'Demo Builders'}
-                                        selected={selectedHero === 'demo'}
-                                        onClick={() => setSelectedHero('demo')}
-                                    />
-                                    <HeroCard
-                                        image={Residential}
-                                        text={'Residential'}
-                                        selected={selectedHero === 'residential'}
-                                        onClick={() => setSelectedHero('residential')}
-                                    />
-                                    <HeroCard
-                                        image={Commercial}
-                                        text={'Commercial'}
-                                        selected={selectedHero === 'commercial'}
-                                        onClick={() => setSelectedHero('commercial')}
-                                    />
-                                    <HeroCard
-                                        image={Infrastructure}
-                                        text={'Infrastructure'}
-                                        selected={selectedHero === 'infrastructure'}
-                                        onClick={() => setSelectedHero('infrastructure')}
-                                    />
-                                </div>
+                        </div>
+                        <div>
+                            <div className='text-white text-2xl font-semibold mb-4'>WHAT WE DO</div>
+                            <div className='flex h-50 transition-all ease-in-out'>
+                                <HeroCard
+                                    image={HeroImage}
+                                    text={'Demo Builders'}
+                                    selected={selectedHero === 'demo'}
+                                    onClick={() => setSelectedHero('demo')}
+                                />
+                                <HeroCard
+                                    image={Residential}
+                                    text={'Residential'}
+                                    selected={selectedHero === 'residential'}
+                                    onClick={() => setSelectedHero('residential')}
+                                />
+                                <HeroCard
+                                    image={Commercial}
+                                    text={'Commercial'}
+                                    selected={selectedHero === 'commercial'}
+                                    onClick={() => setSelectedHero('commercial')}
+                                />
+                                <HeroCard
+                                    image={Infrastructure}
+                                    text={'Infrastructure'}
+                                    selected={selectedHero === 'infrastructure'}
+                                    onClick={() => setSelectedHero('infrastructure')}
+                                />
                             </div>
                         </div>
                     </div>
-                    <div className='absolute h-250 w-full flex justify-end items-end' />
-                    <div className='overflow-hidden w-full'>
-                        <img
-                            key={selectedHero}
-                            className={`h-250 w-full object-cover
+                </div>
+                <div className='absolute h-250 w-full flex justify-end items-end' />
+                <div className='overflow-hidden w-full'>
+                    <img
+                        key={selectedHero}
+                        className={`h-250 w-full object-cover
                             ${slideDirection === 'left'
-                                    ? 'slide-right'
-                                    : 'slide-left'
+                                ? 'slide-right'
+                                : 'slide-left'
                             }`}
-                            src={heroImages[selectedHero]}
-                            alt={selectedHero}
-                        />
-                    </div>
+                        src={heroImages[selectedHero]}
+                        alt={selectedHero}
+                    />
+                </div>
             </section>
             {/* About */}
             <section >
-                <div className='h-250 w-full flex items-center justify-center'>
-                    <div className='w-280 flex flex-col border border-gray-400'>
-                        <div className='grid grid-cols-[1fr_1.5fr] gap-44 pt-12 pl-8 pr-8'>
-                            <div className='text-3xl'>For more than 10 years, Demo Builders built
-                                <span className='font-semibold'> spaces that move people forward.</span>
+                <div className="relative h-250 w-full flex items-center justify-center
+                    before:absolute before:inset-0 before:bg-cover before:bg-center
+                    before:bg-no-repeat before:opacity-30"
+                    style={{
+                        "--bg-image": `url(${SkylineBG})`,
+                    }}>
+                    <div
+                        className="absolute inset-0 before:content-['']"
+                        style={{
+                            backgroundImage: `url(${SkylineBG})`,
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "center",
+                            opacity: 0.03,
+                        }} />
+
+                    <div className="relative z-10">
+                        <div className='w-360 flex flex-col p-24'>
+                            <div className=" grid grid-cols-2 gap-24">
+                                <div className='flex flex-col items-center '>
+                                    <img className="h-auto w-28 mb-16"
+                                        src={DemoBuildersLogo} alt="Demo Builders Logo" />
+                                    <div className='flex flex-col justify-center text-justify text-lg'>
+                                        For over a decade, Demo Builders has shaped spaces that inspire progress and stand the test of time.
+                                        <br /><br />
+                                        From thoughtfully designed homes to commercial developments, every project reflects our commitment to quality, precision, and enduring craftsmanship.
+                                        <br /><br />
+                                        Grounded in our values and driven by a pursuit of excellence, we build with purpose, creating lasting structures and a stronger foundation for generations to come.
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-4 items-center">
+                                    {statistics.map((statistics) => (
+                                    <ProjCard
+                                        key={statistics.stats}
+                                        stats={statistics.stats}
+                                        category={statistics.category}
+                                    />
+                                ))}
+                                </div>
+                                
                             </div>
-                            <div className='text-lg text-justify'>
-                                From homes to commercial spaces, we deliver quality construction built on experience, craftsmanship, and a commitment to doing things right.
-                                <br />
-                                Guided by our values and passion for excellence, we continue building stronger foundations for a better future.
-                            </div>
+
+                            {/* <img className='w-280 scale-105' src={AboutUsImage} alt="" /> */}
                         </div>
-                        <img className='w-280 scale-105' src={AboutUsImage} alt="" />
                     </div>
                 </div>
+                {/* <div className='h-250 w-full flex items-center justify-center opacity-25'
+                style={{
+                    backgroundImage: `url(${SkylineBG})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center'
+                }}>
+                    
+                </div> */}
             </section>
             {/* Projects */}
             <section className='flex justify-center bg-gray-800 py-16'>
@@ -289,55 +367,55 @@ const Landing = () => {
                 </div>
                 <div className="grid grid-cols-[0.5fr_1fr] h-80 w-full">
                     <div />
-                    <div 
-                    style={{
-                        backgroundImage: `url(${ PeopleImage })`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}
+                    <div
+                        style={{
+                            backgroundImage: `url(${PeopleImage})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center'
+                        }}
                     />
                 </div>
             </section>
             {/* Client Feedback */}
             <section className='flex flex-col justify-center items-center pb-16'>
                 <div className="grid grid-cols-2 gap-16 w-280">
-                    <div className="flex flex-col pt-4 pb-16">                        
+                    <div className="flex flex-col pt-4 pb-16">
                         <span className='text-3xl font-semibold'>What Our Clients Say</span>
                         <span className='text-xl mt-8 mb-12'>
                             “Working with Demo Builders was a great experience from start to finish. Their team was professional, reliable, and attentive to every detail throughout the project. They understood our vision, communicated clearly, and delivered quality work that we can be proud of. We truly appreciate their commitment and would gladly work with them again.”
                         </span>
                         <span>
                             <b>— James Alexander McArthur</b> <br />
-                            Chief Executive Officer, <b>McArthur Foods Inc.</b> 
+                            Chief Executive Officer, <b>McArthur Foods Inc.</b>
                         </span>
                     </div>
                     <div className="w-full h-full"
-                    style={{
-                        backgroundImage: `url(${ CEOImage })`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'top'
-                    }}
+                        style={{
+                            backgroundImage: `url(${CEOImage})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'top'
+                        }}
                     />
                 </div>
                 <div className="grid grid-cols-[.5fr_1fr_1.5fr_0.5fr] gap-4 w-full mt-32">
                     <div className="bg-gray-800">
-                        <BiSolidQuoteLeft className="h-full w-full fill-white"/>
-                    </div> 
-                    <div className="flex flex-col bg-gray-800 text-white p-16">           
+                        <BiSolidQuoteLeft className="h-full w-full fill-white" />
+                    </div>
+                    <div className="flex flex-col bg-gray-800 text-white p-16">
                         <span className='text-xl mt-8 mb-12'>
                             “Demo Builders turned our vision for our commercial space into a reality. From planning to completion, their team was professional, organized, and committed to delivering quality work. They handled every detail with care and kept the project moving efficiently. We’re very pleased with the result and proud of the space they built for our business.”
                         </span>
                         <span>
                             <b>— Greg Heffley</b> <br />
-                            VP for Real Estate, <b>Heffley-Tatum Group</b> 
+                            VP for Real Estate, <b>Heffley-Tatum Group</b>
                         </span>
                     </div>
                     <div className="w-full h-full"
-                    style={{
-                        backgroundImage: `url(${ DealImage })`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}
+                        style={{
+                            backgroundImage: `url(${DealImage})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center'
+                        }}
                     />
                     <div className="bg-gray-800" />
                 </div>
