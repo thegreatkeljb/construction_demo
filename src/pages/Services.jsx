@@ -9,11 +9,11 @@ import StaggerReveal from './components/StaggerReveal';
 
 
 const ServicesCard = ({ img, title, desc }) => {
-    const subtitle_style = 'font-semibold mt-8 mb-2 text-xl'
+    const subtitle_style = 'font-semibold sm:mt-8 mb-2 text-xl'
 
     return (
-        <div className='grid grid-cols-2 gap-8 min-h-80 mb-8'>
-            <div className='border border-gray-800'
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 min-h-80 mb-16 sm:mb-8'>
+            <div className='border border-gray-800 h-64 sm:h-auto'
             style={{
                 backgroundImage: `url(${img})`,
                 backgroundSize: 'cover',
