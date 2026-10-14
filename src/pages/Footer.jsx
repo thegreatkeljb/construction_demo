@@ -32,8 +32,9 @@ const Footer = () => {
 
                         <span className="mt-8 w-[80%] italic">
                             Disclaimer: This website is a demonstration
-                            project created by{" "}
-                            <b>Ancar Technologies</b> and does not represent
+                            project created by 
+                            <a className="hover:underline" href="https://ancartechnologies.onrender.com/"><b> Ancar Technologies </b></a> 
+                            and does not represent
                             a real company or business entity. All names,
                             content, images, and information presented are for
                             demonstration purposes only.
@@ -99,32 +100,6 @@ const Footer = () => {
                             </button>
                         </form>
                     </div>
-                </div>
-            </div>
-
-            {/* CTA */}
-            <div className="flex items-center justify-center bg-yellow-400 py-16 text-black">
-                <div className="flex w-240 flex-col items-center justify-center pr-16">
-                    <span className="text-2xl font-semibold">
-                        BUILD YOUR ONLINE PRESENCE
-                    </span>
-
-                    <p className="mt-4 text-center text-lg leading-relaxed">
-                        Establish your own online presence with{" "}
-                        <b>Ancar Technologies</b>. We develop modern,
-                        responsive, and fully customized websites, apps, or
-                        games built around your needs.
-                    </p>
-
-                    <span className="mt-4 text-2xl font-semibold">
-                        For as low as $50 / ₱3,000
-                    </span>
-
-                    <Link
-                        className="mt-6 w-fit border border-gray-800 px-6 py-3 font-semibold transition-colors hover:cursor-pointer hover:bg-gray-800 hover:text-white"
-                    >
-                        GET IN TOUCH
-                    </Link>
                 </div>
             </div>
 

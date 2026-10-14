@@ -29,6 +29,7 @@ import toyota from '../assets/logos/toyota.png';
 import StaggerReveal from "./components/StaggerReveal";
 import InfiniteCarousel from "./components/InfiniteCarousel";
 import LogoStrip from "./components/LogoStrip";
+import HeroSection from "./components/HeroSection"
 
 const HeroCard = ({ image, text, selected = false, onClick }) => {
     return (
@@ -215,80 +216,7 @@ const Landing = () => {
                 `}
             </style>
 
-            <section>
-                <div className='absolute h-250 w-full flex justify-end items-end p-24 
-                transition-all ease-[cubic-bezier(0.22,1,0.36,1)] duration-1000
-                bg-linear-to-b from-gray-100/50 via-transparent to-gray-800/70 overflow-x-hidden'>
-                    <div className='grid grid-cols-[1fr_1.5fr] gap-100 z-5 h-60 w-full items-start'>
-                        <div className='text-white'>
-                            <div className='text-2xl font-semibold mb-4'>WE BUILD TRUST</div>
-                            <p className="whitespace-pre-line text-lg">
-                                {heroDescriptions[selectedHero]}
-                            </p>
-                            <div className='flex gap-2 mt-8'>
-                                <HeroBlock
-                                    selected={selectedHero === 'demo'}
-                                    onClick={() => setSelectedHero('demo')}
-                                />
-                                <HeroBlock
-                                    selected={selectedHero === 'residential'}
-                                    onClick={() => setSelectedHero('residential')}
-                                />
-                                <HeroBlock
-                                    selected={selectedHero === 'commercial'}
-                                    onClick={() => setSelectedHero('commercial')}
-                                />
-                                <HeroBlock
-                                    selected={selectedHero === 'infrastructure'}
-                                    onClick={() => setSelectedHero('infrastructure')}
-                                />
-                            </div>
-                        </div>
-                        <div>
-                            <div className='text-white text-2xl font-semibold mb-4'>WHAT WE DO</div>
-                            <div className='flex h-50 transition-all ease-in-out'>
-                                <HeroCard
-                                    image={HeroImage}
-                                    text={'Demo Builders'}
-                                    selected={selectedHero === 'demo'}
-                                    onClick={() => setSelectedHero('demo')}
-                                />
-                                <HeroCard
-                                    image={Residential}
-                                    text={'Residential'}
-                                    selected={selectedHero === 'residential'}
-                                    onClick={() => setSelectedHero('residential')}
-                                />
-                                <HeroCard
-                                    image={Commercial}
-                                    text={'Commercial'}
-                                    selected={selectedHero === 'commercial'}
-                                    onClick={() => setSelectedHero('commercial')}
-                                />
-                                <HeroCard
-                                    image={Infrastructure}
-                                    text={'Infrastructure'}
-                                    selected={selectedHero === 'infrastructure'}
-                                    onClick={() => setSelectedHero('infrastructure')}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='absolute h-250 w-full flex justify-end items-end' />
-                <div className='overflow-hidden w-full'>
-                    <img
-                        key={selectedHero}
-                        className={`h-250 w-full object-cover
-                            ${slideDirection === 'left'
-                                ? 'slide-right'
-                                : 'slide-left'
-                            }`}
-                        src={heroImages[selectedHero]}
-                        alt={selectedHero}
-                    />
-                </div>
-            </section>
+            <HeroSection />
             {/* About */}
             {/* Paste this over your existing <section>. Imports and `statistics` stay as they are.
     Three changes:
