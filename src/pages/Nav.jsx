@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 
 const Nav = () => {
-    const navlink_style = 'mr-6 hover:border-t hover:border-gray-800';
+    const navlink_style = 'mr-6 border-t border-t-transparent hover:border-gray-800';
     const [scrolled, setScrolled] = useState(false);
 
     
@@ -25,7 +25,7 @@ const Nav = () => {
         </div>
         <div className="flex flex-col justify-center">
             <div className="border-b border-black pl-2 pr-16">
-                This is a demo website built by <a className='font-semibold' href='#'>Ancar Technologies</a>
+                This is a demo website built by <a className='font-semibold hover:underline' href='https://ancartechnologies.onrender.com/'>Ancar Technologies</a>
             </div>
             <ul className="flex flex-row text-lg pl-2 pr-16">
                 <Link to={'/'} className={navlink_style}>Home</Link>
