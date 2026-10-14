@@ -15,7 +15,7 @@ const PagesTemplate = ({ Title = "No Title" }) => {
   return (
     <>
       <section className="flex flex-col items-center w-full overflow-hidden pb-16">
-        <div className='h-120 w-full overflow-hidden'>
+        <div className='h-80 lg:h-120 w-full overflow-hidden'>
           <div className="absolute overflow-hidden z-1 h-120 w-full bg-linear-to-b from-white/30 via-white/10 to-transparent"/>
           <div  
             className={`h-120 w-full`}
@@ -36,7 +36,7 @@ const PagesTemplate = ({ Title = "No Title" }) => {
             <Link to={'/'}>Home</Link>
           </div>
         </div>
-        <div className="w-7xl">
+        <div className="w-full px-8 md:px-24 2xl:w-7xl">
           <Outlet />
         </div>
       </section>

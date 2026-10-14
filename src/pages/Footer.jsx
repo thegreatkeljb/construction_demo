@@ -26,7 +26,7 @@ const Footer = () => {
 
                     {/* About */}
                     <div className="flex w-fit flex-col pb-16 lg:pb-0 lg:pl-16">
-                        <span className="text-5xl font-semibold">
+                        <span className="text-2xl lg:text-5xl font-semibold">
                             DEMO BUILDERS
                         </span>
 

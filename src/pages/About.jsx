@@ -8,7 +8,7 @@ import StaggerReveal from './components/StaggerReveal'
 
 const ProfileCard = ({ image, name, title }) => {
   return (
-    <div className='pl-4 pt-2 border-l-2 border-gray-800 text-black'>
+    <div className='lg:pl-4 pt-2 border-none lg:border-l-2 border-gray-800 text-black'>
       <img className='grayscale-25'
       src={ image } alt="" />
       <div className='flex flex-col text-right pt-2 pr-4'>
@@ -23,7 +23,7 @@ const ProjCard = ({ stats, category }) => {
   return (
     <div>
       <div className='flex flex-col h-full text-left justify-center
-      border-r-2 pl-4'>
+      md::border-r-2 md:pl-4'>
         <span className='font-semibold text-2xl'>{ stats }</span>
         <span>{ category }</span>
       </div>
@@ -80,7 +80,7 @@ const About = () => {
         <span className="text-2xl font-semibold mb-2">15+ Years of Experience</span>
         <span>With more than 15 years in the construction industry, our experience spans a wide range of projects and environments.
         Our team understands that every project comes with its own requirements, challenges, and expectations. We approach each one with careful planning, attention to detail, and a commitment to delivering work to a high standard.</span>
-        <StaggerReveal direction='up' className="grid grid-cols-4 gap-4 h-32 mt-8">
+        <StaggerReveal direction='up' className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:h-32 mt-8">
            {statistics.map((statistics) => (
               <ProjCard
                 key={statistics.stats}
@@ -120,7 +120,7 @@ const About = () => {
         <span className="text-2xl font-semibold mb-2">Our Leadership</span>
         Behind every successful project is a team that understands how to turn plans into action. <br />
         Our leadership team brings together experience across construction, project management, engineering, and business operations. Together, they provide the direction and accountability needed to deliver projects efficiently and responsibly.
-        <StaggerReveal direction='up' className="grid grid-cols-4 gap-4 h-100 mt-4">
+        <StaggerReveal direction='up' className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:h-100 mt-4">
            {leaders.map((leader) => (
               <ProfileCard
                 key={leader.name}
