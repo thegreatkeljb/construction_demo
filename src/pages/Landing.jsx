@@ -237,7 +237,7 @@ const Landing = () => {
                         }} />
 
                     <div className="relative z-10 w-full pb-24 xl:pb-0">
-                        <div className='mx-auto w-full px-24 xl:max-w-300 2xl:max-w-360
+                        <div className='mx-auto w-full px-8 md:px-24 xl:max-w-300 2xl:max-w-360
                          flex flex-col p-24'>
                             <div className=" grid grid-cols-1 xl:grid-cols-2 gap-24">
                                 <div className='flex flex-col items-center '>
@@ -283,7 +283,7 @@ const Landing = () => {
 
             {/* Projects */}
             <section className='flex justify-center bg-gray-800 py-24 xl:py-32'>
-                <div className='flex flex-col w-full px-24 xl:p-0 xl:w-280 bg-gray-800 text-white'>
+                <div className='flex flex-col w-full px-8 md:px-24 xl:p-0 xl:w-280 bg-gray-800 text-white'>
                     <span className='text-4xl font-semibold'>Where Engineering Meets Excellence</span>
                     <span className='mt-8 mb-4'>Demo Builders is a trusted leader in the construction sector, renowned
                         <br /> for delivering exceptional results across a diverse range of projects.</span>
@@ -310,7 +310,7 @@ const Landing = () => {
             </section>
             {/* People */}
             <section className="flex flex-col justify-center items-center pt-24 pb-32">
-                <div className="flex flex-col w-full px-24 xl:px-0 lg:w-240 text-center">
+                <div className="flex flex-col w-full px-8 md:px-24 xl:px-0 lg:w-240 text-center">
                     <span className='text-3xl font-semibold'>Excellence Starts With Our People</span>
                     <span className='text-lg mt-8 pb-16 lg:pb-0 lg:mb-16 border-b lg:border-0'>
                         At Demo Builders, we believe exceptional work begins with exceptional people. We are committed to investing in our team’s growth, safety, and well-being, creating an environment where every individual is empowered to build with skill, confidence, and pride.
@@ -329,7 +329,7 @@ const Landing = () => {
             </section>
             {/* Client Feedback */}
             <section className='flex flex-col justify-center items-center pb-16'>
-                <div className="h-fit flex flex-col-reverse items-center w-full px-24 lg:grid lg:grid-cols-2 lg:gap-16 xl:w-280">
+                <div className="h-fit flex flex-col-reverse items-center w-full px-8 md:px-24 lg:grid lg:grid-cols-2 lg:gap-16 xl:w-280">
                     <div className="flex flex-col pt-4 pb-16">
                         <span className='hidden lg:inline-block text-3xl font-semibold'>What Our Clients Say</span>
                         <span className='text-xl mt-8 mb-12'>
@@ -340,7 +340,7 @@ const Landing = () => {
                             Chief Executive Officer, <b>McArthur Foods Inc.</b>
                         </span>
                     </div>
-                    <div className="h-80 w-80 rounded-full lg:rounded-none lg:w-full lg:h-full"
+                    <div className="h-64 w-64 rounded-full lg:rounded-none lg:w-full lg:h-full"
                         style={{
                             backgroundImage: `url(${CEOImage})`,
                             backgroundSize: 'cover',

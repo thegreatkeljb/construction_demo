@@ -149,7 +149,7 @@ export default function HeroSlider() {
                 ))}
 
                 {/* Overlay with text and controls */}
-                <div className='absolute inset-0 z-30 flex justify-start items-end py-24 px-4 md:px-24
+                <div className='absolute inset-0 z-30 flex justify-start items-end py-24 px-8 md:px-24
                     bg-linear-to-b from-gray-100/50 via-transparent to-gray-800/70 overflow-x-hidden'>
                     <div className='flex h-full items-center xl:grid grid-cols-[1fr_1.5fr] xl:gap-36 2xl:gap-82 z-5 md:h-60 w-full xl:items-start'>
                         <div className='text-white flex flex-col items-center md:inline-block'>
