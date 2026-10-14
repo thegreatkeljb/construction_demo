@@ -22,7 +22,7 @@ const Footer = () => {
         <footer>
             {/* Main Footer */}
             <div className="bg-gray-800 text-white">
-                <div className="text-center grid grid-cols-1 lg:grid-cols-[1.5fr_0.5fr_1fr] gap-4 px-8 py-16 md:px-16">
+                <div className="text-start lg:text-center grid grid-cols-1 lg:grid-cols-[1.5fr_0.5fr_1fr] gap-4 px-8 py-16 md:px-16">
 
                     {/* About */}
                     <div className="flex w-fit flex-col pb-16 lg:pb-0 lg:pl-16">

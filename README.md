@@ -1,16 +1,76 @@
-# React + Vite
+# Demo Builders Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive website for Demo Builders that showcases its construction services, featured projects, company values, and commitment to quality craftsmanship.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Responsive Design:** Optimized for desktop, tablet, and mobile devices.
+- **Company Profile:** Showcases the company's background, values, and commitment to quality.
+- **Construction Services:** Presents the company's services and capabilities.
+- **Featured Projects:** Highlights selected residential and commercial developments.
+- **Contact Section:** Provides a convenient way for prospective clients to make inquiries.
+- **Animations and Interactions:** Enhances the browsing experience with smooth transitions and visual effects.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+1. Clone the repository.
+
+   ```bash
+   git clone YOUR_REPOSITORY_URL
+   ```
+
+2. Navigate to the project directory.
+
+   ```bash
+   cd demo-builders
+   ```
+
+3. Install dependencies.
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server.
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in your terminal.
+
+## Build for Production
+
+Run the following command to create an optimized production build.
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Purpose
+
+This project demonstrates web development skills, responsive interface design, component-based architecture, and the use of animation to create a polished business website.
+
+## License
+
+This project is intended for demonstration and portfolio purposes. All company names, project details, images, and other assets remain the property of their respective owners unless otherwise stated.
