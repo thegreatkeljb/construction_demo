@@ -65,7 +65,7 @@ const HeroBlock = ({ selected = false, onClick }) => {
 
 const ProjectCard = ({ image, title, desc }) => {
     return (
-        <div className='hero-bg group flex items-end h-132 pb-12 px-4 rounded-tr-4xl border border-gray-500 
+        <div className='hero-bg group flex items-end h-132 pb-12 px-4 border border-gray-500 
         hover:cursor-pointer transition-all ease-in-out duration-300'
             style={{
                 backgroundImage: `linear-gradient(to top, black, transparent, transparent), url(${image})`,

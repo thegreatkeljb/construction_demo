@@ -12,7 +12,7 @@ const SLIDES = [
         key: 'demo',
         image: HeroImage,
         label: 'Demo Builders',
-        description: 'Established in 2015, Demo Builders is owned and managed by trustworthy professionals with more than 12 years of experience in residential and commercial construction projects. We stand at the forefront of nation-building in the Philippines, Driven by a commitment to excellence.',
+        description: 'Established in 2015, Demo Builders is owned and managed by trustworthy professionals with more than 12 years of experience in residential and commercial construction projects. We stand at the forefront of nation-building in the Philippines, driven by a commitment to excellence.',
     },
     {
         key: 'residential',
