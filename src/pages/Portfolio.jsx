@@ -15,7 +15,7 @@ const ProjectCard = ({ img, name = "No Title", category, status }) => {
         style={{
             backgroundImage: `url(${ img })`,
             backgroundPosition: 'center',
-            backgroundSize: ('cover', '150%'),
+            backgroundSize: ('cover'),
             backgroundRepeat: 'no-repeat'
         }}>
             <div className="relative w-full h-full overflow-hidden group text-white">
