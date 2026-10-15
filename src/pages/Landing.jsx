@@ -89,8 +89,8 @@ const ProjectCard = ({ image, title, desc }) => {
 
 const ProjCard = ({ stats, category }) => {
     return (
-        <div className='flex flex-col h-full text-center justify-center p-8 rounded-xl border border-gray-200'>
-            <span className='font-semibold text-5xl pb-4'>{stats}</span>
+        <div className='flex flex-col h-full text-center justify-center py-8 md:p-8 rounded-xl border border-gray-200'>
+            <span className='font-semibold text-4xl md:text-5xl pb-4'>{stats}</span>
             <span>{category}</span>
         </div>
     )
@@ -166,7 +166,7 @@ const Landing = () => {
     }
 
     const heroDescriptions = {
-        demo: 'Established in 2015, Demo Builders is owned and managed by trustworthy professionals with more than 12 years of experience in residential and commercial construction projects. We stand at the forefront of nation-building in the Philippines, Driven by a commitment to excellence.',
+        demo: 'Established in 2015, Demo Builders is owned and managed by trustworthy professionals with more than 12 years of experience in residential and commercial construction projects. We stand at the forefront of nation-building in the Philippines, driven by a commitment to excellence.',
         residential: `We specialize in building quality residential spaces designed for comfort, functionality, and lasting value. From single-family homes to larger residential developments, our team delivers projects with careful planning, quality workmanship, and attention to detail.`,
         commercial: `We deliver commercial construction projects that combine functionality, durability, and thoughtful design. From office spaces and retail establishments to larger commercial developments, we work to create spaces that support businesses and meet the demands of everyday operations.`,
         infrastructure: `We undertake infrastructure projects that contribute to the growth and development of communities. Our work focuses on delivering reliable, durable, and well-planned structures while maintaining high standards of safety, quality, and engineering throughout every stage of construction.`,
