@@ -28,6 +28,7 @@ export default function LogoStrip({
 }) {
   return (
     <section className={`border-y border-black/10 ${className} bg-white`}>
+      <span className="block text-center pt-8 shrink-0 text-black/60 sm:hidden">{label}</span>
       <div className="mx-auto flex w-full max-w-360 items-center gap-8 px-4 py-8 lg:gap-16">
         <span className="hidden shrink-0 text-black/60 sm:block">{label}</span>
 
