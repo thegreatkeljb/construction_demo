@@ -77,10 +77,10 @@ const About = () => {
   return (
     <section className='flex flex-col justify-center text-lg'>
       <div className="flex flex-col">
-        <span className="text-2xl font-semibold mb-2">15+ Years of Experience</span>
+        <span className="hidden sm:block text-2xl font-semibold mb-2">15+ Years of Experience</span>
         <span>With more than 15 years in the construction industry, our experience spans a wide range of projects and environments.
         Our team understands that every project comes with its own requirements, challenges, and expectations. We approach each one with careful planning, attention to detail, and a commitment to delivering work to a high standard.</span>
-        <StaggerReveal direction='up' className="h-fit grid grid-cols-2 lg:grid-cols-4 gap-4 md:h-32 mt-8">
+        <StaggerReveal direction='up' className="h-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:h-32 mt-8">
            {statistics.map((statistics) => (
               <ProjCard
                 key={statistics.stats}
