@@ -354,7 +354,7 @@ const Landing = () => {
                     <div className="h-36 lg:bg-gray-800 lg:h-full">
                         <BiSolidQuoteLeft className="h-full w-full fill-white" />
                     </div>
-                    <div className="flex flex-col lg:bg-gray-800 text-white p-16">
+                    <div className="flex flex-col lg:bg-gray-800 text-white p-8 md:p-16">
                         <span className='text-xl mt-8 mb-12'>
                             “Demo Builders turned our vision for our commercial space into a reality. From planning to completion, their team was professional, organized, and committed to delivering quality work. They handled every detail with care and kept the project moving efficiently. We’re very pleased with the result and proud of the space they built for our business.”
                         </span>
